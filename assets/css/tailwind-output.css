@@ -596,6 +596,9 @@
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
+  .right-1\/2 {
+    right: calc(1/2 * 100%);
+  }
   .isolate {
     isolation: isolate;
   }
@@ -811,6 +814,9 @@
   .h-\[3px\] {
     height: 3px;
   }
+  .h-\[80vh\] {
+    height: 80vh;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -934,6 +940,11 @@
   .origin-top-right {
     transform-origin: top right;
   }
+  .-translate-1\/2 {
+    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .-translate-full {
     --tw-translate-x: -100%;
     --tw-translate-y: -100%;
@@ -942,6 +953,18 @@
   .translate-full {
     --tw-translate-x: 100%;
     --tw-translate-y: 100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-y-1\/2 {
+    --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-x-1\/2 {
+    --tw-translate-x: calc(1/2 * 100%);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-x-2\/5 {
@@ -1114,6 +1137,9 @@
   .auto-rows-min {
     grid-auto-rows: min-content;
   }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .grid-cols-none {
     grid-template-columns: none;
   }
@@ -1269,6 +1295,9 @@
   }
   .justify-items-stretch {
     justify-items: stretch;
+  }
+  .gap-x-10 {
+    column-gap: calc(var(--spacing) * 10);
   }
   .space-y-reverse {
     :where(& > :not(:last-child)) {

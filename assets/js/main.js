@@ -21,12 +21,11 @@ $(document).ready(function () {
   //   delay:2
   // });
 
-
   //-------------------------second-------------------------//
-  
+
   // const container = $(".container");
   // const span = $("span");
-  
+
   // let conatainerAnimate = gsap.to(container, {
   //   width: "20vh",
   //   height: "40vh",
@@ -48,6 +47,41 @@ $(document).ready(function () {
   //   textTween.reverse()
   // });
 
-
   //-------------------------third-------------------------//
+  gsap.set("img", {
+    yPercent: -100,
+  });
+  gsap.set("span", {
+    opacity: 0,
+  });
+
+  gsap.to("img", {
+    yPercent: 0,
+    stagger: 0.1,
+    delay: 0.5,
+    scale: 1.3,
+    duration: 2,
+    onComplete: scaleAndFade,
+    ease: "power4.out",
+  });
+
+  function scaleAndFade() {
+    gsap.to("img", {
+      scale: 1,
+      duration: 2,
+    });
+    gsap.fromTo(
+      "span",
+      {
+        y: -50,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 2,
+        stagger: 0.3,
+        y: 50,
+      }
+    );
+  }
 });
